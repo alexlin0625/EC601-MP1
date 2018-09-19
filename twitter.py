@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 # encoding: utf-8
 # Author - Alex Jeffrey Lin
-import os
 
 import tweepy  # https://github.com/tweepy/tweepy
 import wget  # lib for downloading images into file
+import os 
 import subprocess
 
 # Twitter API credentials
-consumer_key = "UgOFDaoQ67TO25ELAlCn6AEPv"
-consumer_secret = "bhhCvWlQWO8NburU28wNvAiixWDdHFuI9C8GjoAOqo9GUXIM28"
-access_key = "1041455819269779456-7zSqv3Fm2L0hB4lrQISub64R57zxBB"
-access_secret = "QffdxV2F4PUzlICRITkePTHjlmnIYE4Ks7vi0AzCdhtvA"
+consumer_key = "enter your consumer_key"
+consumer_secret = "enter your consumer_secret"
+access_key = "enter your access_key"
+access_secret = "enter your access_secret"
 
 
 def get_all_tweets(screen_name):
