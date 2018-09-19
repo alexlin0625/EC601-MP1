@@ -2,9 +2,8 @@
 # encoding: utf-8
 # Author - Alex Jeffrey Lin
 
-import tweepy  # https://github.com/tweepy/tweepy
-import wget  # lib for downloading images into file
 import os 
+import tweepy  
 import subprocess
 
 # Twitter API credentials
@@ -61,9 +60,8 @@ def get_all_tweets(screen_name):
             num +=1
             #wget.download(media[0]['media_url'])
 
-
-#constructing videos with downloaded photos
 def tweetsvideo():
+    #constructing videos with downloaded photos
     ffmpeg_out = 'ffmpeg -framerate 0.25 -i %d.jpg output.mp4 '
     subprocess.call(ffmpeg_out, shell=True)
 
