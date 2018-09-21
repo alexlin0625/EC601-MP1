@@ -47,6 +47,7 @@ get_all_tweets(screen_name)
 
   * After authorization, the system will download images from twitter user's feed.
   * The downloaded photos are renamed in number order with following code
+    I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures 
 ```bash
 num = 1
     for tweets in alltweets:
@@ -58,10 +59,13 @@ num = 1
             num += 1
     return num
 ```
-I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures and 
-  * rename files in number olders such as 1.jpg format.
+
+downloadPic(numa)
+  * 
   
-2) tweetsvideo()
-  * Following code coverts downloaded pictures into 
-  
-3) downloadPic(numa)
+tweetsvideo()
+  * Following code coverts tagged photos into a video in mp4 format
+```bash
+ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
+    subprocess.call(ffmpeg_out, shell=True)
+```
