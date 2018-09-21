@@ -10,6 +10,7 @@ from PIL import ImageDraw
 from google.cloud import vision
 from google.cloud.vision import types
 
+
 # Twitter API credentials
 consumer_key = "Enter your consumer_key"
 consumer_secret = "Enter your consumer_secret"
@@ -54,7 +55,7 @@ def get_all_tweets(screen_name):
         print("...%s tweets downloaded so far" % (len(alltweets)))
 
 
-    # download images into files
+    # download images in number order and in jpg format
     num = 1
     for tweets in alltweets:
         media = tweets.entities.get('media', [])
@@ -67,7 +68,7 @@ def get_all_tweets(screen_name):
 
 #constructing videos with downloaded photos
 def tweetsvideo():
-    ffmpeg_out = 'ffmpeg -framerate 0.25 -i %d.jpg output.mp4 '
+    ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
     subprocess.call(ffmpeg_out, shell=True)
 
 #use google vision analysis to describe the contents of photps
@@ -110,8 +111,10 @@ def downloadPic(numa):
 if __name__ == '__main__':
     # pass in the username of the account you want to download
     numa = get_all_tweets("@Ibra_official")
-    
-    #
+
+    # download photos and label tags on photos using google vision
     downloadPic(numa)
+
+    #generate a video with labelled photos
     tweetsvideo()
 
