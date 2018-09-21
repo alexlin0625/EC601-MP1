@@ -72,7 +72,7 @@ def tweetsvideo():
     subprocess.call(ffmpeg_out, shell=True)
 
 #use google vision analysis to describe the contents of photps
-def downloadPic(numa):
+def labelPic(numa):
     # Instantiates a client
     client = vision.ImageAnnotatorClient()
 
@@ -113,7 +113,7 @@ if __name__ == '__main__':
     numa = get_all_tweets("@Ibra_official")
 
     # download photos and label tags on photos using google vision
-    downloadPic(numa)
+    labelPic(numa)
 
     #generate a video with labelled photos
     tweetsvideo()
