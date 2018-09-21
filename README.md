@@ -21,7 +21,7 @@ Table of contents
 API Mini-Project
 ================
 The goal of this project is to create a library(in Python) that downloads images from random twitter user's feed, 
-covert them into video and describe the contents of the images in the video using google vision. The program is done in Python
+covert them into video and describe the contents of the images in the video using google vision. The entire program is done in Python
 
 Preparation
 ============
@@ -44,11 +44,24 @@ $ ffmpeg (brew install ffmpeg)
 Twitter.py
 ==========
 get_all_tweets(screen_name)
- *use tweepy library for python.
-  - be able to download images from twitter using wget library.
-  - rename files in number olders such as 1.jpg format.
+
+  * After authorization, the system will download images from twitter user's feed.
+  * The downloaded photos are renamed in number order with following code
+```bash
+num = 1
+    for tweets in alltweets:
+        media = tweets.entities.get('media', [])
+        if len(media) > 0:
+            # download images using wget command
+            cmd = "wget -c "+"'"+media[0]['media_url']+"' -O " + str(num)+".jpg"
+            os.system(cmd)
+            num += 1
+    return num
+```
+I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures and 
+  * rename files in number olders such as 1.jpg format.
   
 2) tweetsvideo()
-  - covert all the downloaded images into a output video in mp4 format.
+  * Following code coverts downloaded pictures into 
   
 3) downloadPic(numa)
