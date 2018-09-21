@@ -43,7 +43,7 @@ $ ffmpeg (brew install ffmpeg)
 ```
 Twitter.py
 ==========
-**get_all_tweets(screen_name)
+**get_all_tweets(screen_name)**
 
   * After authorization, the system will download images from twitter user's feed.
   * The downloaded photos are renamed in number order with following code. I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures and labeling order in 
@@ -59,7 +59,7 @@ num = 1
     return num
 ```
 
-**labelPic(numa)
+**labelPic(numa)**
   * Following for loop allows google vision to label downloaded photos in number order until it's over. 
 ```bash
 path = os.getcwd()
@@ -78,8 +78,8 @@ path = os.getcwd()
     
     img.save(str(i)+".jpg")
 ```
-  * 
-**tweetsvideo()
+
+** tweetsvideo()**
   * Following code coverts tagged photos into a video in mp4 format
 ```bash
 ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
