@@ -11,9 +11,9 @@ Table of contents
    * [Preparation](#Preparation)
    * [Installation](#Installation)
    * [Twitter.py](#Twitter.py) 
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
+      * [get_all_tweets(screen_name)](#stdin)
+      * [tweetsvideo()](#local-files)
+      * [downloadPic(numa)](#remote-files)
       * [Multiple files](#multiple-files)
       * [Combo](#combo)
       * [Auto insert and update TOC](#auto-insert-and-update-toc)
@@ -37,18 +37,21 @@ $ export GOOGLE_APPLICATION_CREDENTIALS="Enter your JSON file's PATH"
 Installation package
 ====================
 ```bash
-$ wget 
+$ PIL
 $ tweepy 
-$ 
+$ wget
+$ google.cloud
+$ google.cloud.vision
+$ ffmpeg (brew install ffmpeg)
 ```
 Twitter.py
 ==========
-1) Twitter API to access the twitter content
+1) get_all_tweets(screen_name)
   - use tweepy library for python.
   - be able to download images from twitter using wget library.
   - rename files in number olders such as 1.jpg format.
   
-2) FFMPEG to convert images to videos
+2) tweetsvideo()
   - covert all the downloaded images into a output video in mp4 format.
   
-3) Google Vision analysis to describe the content 
+3) downloadPic(numa)
