@@ -5,19 +5,20 @@ import os
 import io
 import tweepy
 import subprocess
+from PIL import Image
+from PIL import ImageDraw
 from google.cloud import vision
 from google.cloud.vision import types
 
-
 # Twitter API credentials
-consumer_key = "Enter your key"
-consumer_secret = "Enter your key"
-access_key = "Enter your key"
-access_secret = "Enter your key"
+consumer_key = "Enter your consumer_key"
+consumer_secret = "Enter your consumer_secret"
+access_key = "Enter your access_key"
+access_secret = "Enter your access_secret"
 
 
+# Twitter only allows access to a users most recent 3240 tweets with this method
 def get_all_tweets(screen_name):
-    # Twitter only allows access to a users most recent 3240 tweets with this method
 
     # authorize twitter, initialize tweepy
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -58,11 +59,11 @@ def get_all_tweets(screen_name):
     for tweets in alltweets:
         media = tweets.entities.get('media', [])
         if len(media) > 0:
+            # download images using wget command
             cmd = "wget -c "+"'"+media[0]['media_url']+"' -O " + str(num)+".jpg"
             os.system(cmd)
-            num +=1
-            #wget.download(media[0]['media_url'])
-
+            num += 1
+    return num
 
 #constructing videos with downloaded photos
 def tweetsvideo():
@@ -70,18 +71,17 @@ def tweetsvideo():
     subprocess.call(ffmpeg_out, shell=True)
 
 #use google vision analysis to describe the contents of photps
-def run_quickstart():
+def downloadPic(numa):
     # Instantiates a client
     client = vision.ImageAnnotatorClient()
 
     # The name of the image file to annotate
     path = os.getcwd()
-
-    file_name_jpg=path+"/"+str(1)+".jpg"
-    file_name = os.path.join(
-        os.path.dirname(__file__),
-        file_name_jpg)
-    #j+=1
+    for i in range(1, numa):
+        file_name_jpg = path+"/"+str(i)+".jpg"
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            file_name_jpg)
 
     # Loads the image into memory
     with io.open(file_name, 'rb') as image_file:
@@ -96,10 +96,22 @@ def run_quickstart():
     print('Labels:')
     for label in labels:
         print(label.description)
-    # [END vision_quickstart]
+
+    #open pictures
+    img = Image.open(file_name_jpg)
+
+    draw = ImageDraw.Draw(img)
+    #(Position, content, color)
+    draw.text((0, 0), str(labels), (255, 255, 255))
+
+    #save the text on selected pics
+    img.save(str(i)+".jpg")
 
 if __name__ == '__main__':
     # pass in the username of the account you want to download
-    get_all_tweets("@Ibra_official")
+    numa = get_all_tweets("@Ibra_official")
+    
+    #
+    downloadPic(numa)
     tweetsvideo()
-    run_quickstart()
+
