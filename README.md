@@ -12,8 +12,8 @@ Table of contents
    * [Installation](#Installation)
    * [Twitter.py](#Twitter.py) 
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
+      * [labelPic(numa)](#downloadPic(numa))
       * [tweetsvideo()](#tweetsvideo())
-      * [downloadPic(numa)](#downloadPic(numa))
    * [Tests](#tests)
    * [Dependency](#dependency)
 <!--te-->
@@ -43,11 +43,10 @@ $ ffmpeg (brew install ffmpeg)
 ```
 Twitter.py
 ==========
-get_all_tweets(screen_name)
+**get_all_tweets(screen_name)
 
   * After authorization, the system will download images from twitter user's feed.
-  * The downloaded photos are renamed in number order with following code
-    I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures 
+  * The downloaded photos are renamed in number order with following code. I renamed the files in number order is to make ffmpeg easier to track the path of the downloaded pictures and labeling order in 
 ```bash
 num = 1
     for tweets in alltweets:
@@ -60,10 +59,27 @@ num = 1
     return num
 ```
 
-downloadPic(numa)
+**labelPic(numa)
+  * Following for loop allows google vision to label downloaded photos in number order until it's over. 
+```bash
+path = os.getcwd()
+    for i in range(1, numa):
+        file_name_jpg = path+"/"+str(i)+".jpg"
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            file_name_jpg)
+```
+  * Following code allows google vision to label tags that are visualizable on each photos
+```bash
+    img = Image.open(file_name_jpg)
+
+    draw = ImageDraw.Draw(img)
+    draw.text((0, 0), str(labels), (255, 255, 255))
+    
+    img.save(str(i)+".jpg")
+```
   * 
-  
-tweetsvideo()
+**tweetsvideo()
   * Following code coverts tagged photos into a video in mp4 format
 ```bash
 ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
