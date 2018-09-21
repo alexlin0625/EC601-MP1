@@ -4,6 +4,9 @@ EC601 Mini-Project 1
 
 Copyright Alex Jeffrey Lin 
 
+### Status
+[![Build Status](https://travis-ci.org/simkimsia/UtilityBehaviors.png)](https://travis-ci.org/simkimsia/UtilityBehaviors)
+
 Table of contents
 =================
 <!--ts-->
@@ -14,8 +17,6 @@ Table of contents
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
       * [labelPic(numa)](#downloadPic(numa))
       * [tweetsvideo()](#tweetsvideo())
-   * [Tests](#tests)
-   * [Dependency](#dependency)
 <!--te-->
 
 API Mini-Project
