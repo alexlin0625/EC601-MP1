@@ -11,12 +11,9 @@ Table of contents
    * [Preparation](#Preparation)
    * [Installation](#Installation)
    * [Twitter.py](#Twitter.py) 
-      * [get_all_tweets(screen_name)](#stdin)
-      * [tweetsvideo()](#local-files)
-      * [downloadPic(numa)](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
+      * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
+      * [tweetsvideo()](#tweetsvideo())
+      * [downloadPic(numa)](#downloadPic(numa))
    * [Tests](#tests)
    * [Dependency](#dependency)
 <!--te-->
@@ -46,8 +43,8 @@ $ ffmpeg (brew install ffmpeg)
 ```
 Twitter.py
 ==========
-1) get_all_tweets(screen_name)
-  - use tweepy library for python.
+get_all_tweets(screen_name)
+ *use tweepy library for python.
   - be able to download images from twitter using wget library.
   - rename files in number olders such as 1.jpg format.
   
