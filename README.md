@@ -1,6 +1,7 @@
 # EC601-MP1
 Boston University
 EC601 Mini-Project 1 
+
 Copyright Alex Jeffrey Lin 
 
 Table of contents
