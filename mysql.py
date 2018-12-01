@@ -11,7 +11,7 @@ import pymysql
 
 def connectdb():
     # connect to MySQL database
-    db = pymysql.connect("localhost", "root", "@Alixpig6", "mysql_a")
+    db = pymysql.connect("localhost", "root", "your_password", "your_database_name")
     print('connected')
     return db
 
