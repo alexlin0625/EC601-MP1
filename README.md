@@ -31,11 +31,11 @@ Preparation
 Before you use this code, you need to apply developer account for twitter. If you are a student, apply the developver account using school email will be approved immediately. Once it's approved, you can enter your consumer and access keys in the head of the twitter.py file. Now you can access the Twitter API. 
 
 You also need to create a google cloud service account. Step by step tutorial on Google Cloud Vision API can be found in the following link. https://cloud.google.com/vision/docs/. You can set up authentication by creating a service account key. A JSON file that contains your key downloads to your computer. Lastly, you need to set the following statement in your terminal to pass the Google Authentication.
-
-After successful running the progam, you should download and install databases to your local computer. The two databaese that will be using here is MySQL and MongoDB. After databasese are downloaded, you should make sure you turn the server on. MySQL and MongoDB are both written using packages "pymysql" and "pymongo" to be competable with our python twitter api scripts. you can just import them.
 ```bash
 $ export GOOGLE_APPLICATION_CREDENTIALS="Enter your JSON file's PATH"
 ```
+After successful running the progam, you should download and install databases to your local computer. The two databaese that will be using here is MySQL and MongoDB. After databasese are downloaded, you should make sure you turn the server on. MySQL and MongoDB are both written using packages "pymysql" and "pymongo" to be competable with our python twitter api scripts. you can just import them.
+
 Installation package
 ====================
 ```bash
@@ -96,3 +96,5 @@ path = os.getcwd()
 ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
     subprocess.call(ffmpeg_out, shell=True)
 ```
+Mysql.py
+==========
