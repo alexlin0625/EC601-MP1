@@ -10,21 +10,22 @@ Copyright Alex Jeffrey Lin
 Table of contents
 =================
 <!--ts-->
-   * [API Mini-Project](#API-Mini-Project)
+   * [Mini-Project](#Mini-Project)
    * [Preparation](#Preparation)
    * [Installation](#Installation)
    * [Twitter.py](#Twitter.py) 
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
       * [labelPic(numa)](#downloadPic(numa))
       * [tweetsvideo()](#tweetsvideo())
+   * [Mysql.py](#Mysql.py)
 <!--te-->
 
-API Mini-Project + Database Mini-Project
+Mini Project
 ================
 The goal of this project is to create a library(in Python) that downloads images from random twitter user's feed, 
 covert them into video and describe the contents of the images in the video using google vision. The entire program is done in Python. 
 
-second part of this 
+second part of this project is to implement databases into our twitter APi program. The purpose is to learn how to store information into databases such as total pictures of twitter download, image url, user ID, etc. The two databases that we will be implementing are MySQL and MongoDB. We can know the diffrence between relational DB and non-relational DB in this project.
 
 Preparation
 ============
@@ -34,7 +35,7 @@ You also need to create a google cloud service account. Step by step tutorial on
 ```bash
 $ export GOOGLE_APPLICATION_CREDENTIALS="Enter your JSON file's PATH"
 ```
-After successful running the progam, you should download and install databases to your local computer. The two databaese that will be using here is MySQL and MongoDB. After databasese are downloaded, you should make sure you turn the server on. MySQL and MongoDB are both written using packages "pymysql" and "pymongo" to be competable with our python twitter api scripts. you can just import them.
+After successful running the progam, you should download and install databases to your local computer. The two databaese that will be using here is MySQL and MongoDB. After databases are installed, you should make sure you turn the server on. MySQL and MongoDB are both written using packages "pymysql" and "pymongo" to be competable with our twitter.py file. You can just import your databases.
 
 Installation package
 ====================
@@ -98,3 +99,4 @@ ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
 ```
 Mysql.py
 ==========
+
