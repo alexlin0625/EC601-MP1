@@ -99,4 +99,7 @@ ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
 ```
 Mysql.py
 ==========
+This allows you to connect to a existed database 
+```bash
 
+```
