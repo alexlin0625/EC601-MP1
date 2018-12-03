@@ -99,7 +99,7 @@ ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
 ```
 Mysql.py
 ==========
-This allows you to connect to a existed database 
+This allows you to connect to a existed database using the code below
 ```bash
-
+db = pymysql.connect("localhost", "root", "your_password", "your_database_name")
 ```
