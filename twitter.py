@@ -5,6 +5,8 @@ import os
 import io
 import tweepy
 import subprocess
+import mysql
+import mongodb
 from PIL import Image
 from PIL import ImageDraw
 from google.cloud import vision
@@ -107,6 +109,10 @@ def labelPic(numa):
 
     #save the text on selected pics
     img.save(str(i)+".jpg")
+    
+    #print values stored in databases
+    mysql.insertdb('Username', 'twitter', twtnum, picnum - 1, picurl, time, tag)
+    mongodb.mymongodb('Username', 'twitter', twtnum, picnum - 1, picurl, time, tag)
 
 if __name__ == '__main__':
     # pass in the username of the account you want to download
