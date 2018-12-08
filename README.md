@@ -17,8 +17,8 @@ Table of contents
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
       * [labelPic(numa)](#downloadPic(numa))
       * [tweetsvideo()](#tweetsvideo())
-   * [Mysql.py](#Mysql-py)
-   * [Mongodb.py](#Mongodb-py)
+   * [Mysql.py](#Mysql.py)
+   * [Mongodb.py](#Mongodb.py)
 <!--te-->
 
 Mini Project
