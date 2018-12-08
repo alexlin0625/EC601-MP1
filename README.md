@@ -17,7 +17,8 @@ Table of contents
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
       * [labelPic(numa)](#downloadPic(numa))
       * [tweetsvideo()](#tweetsvideo())
-   * [Mysql.py](#Mysql.py)
+   * [Mysql.py](#Mysql-py)
+   * [Mongodb.py](#Mongodb-py)
 <!--te-->
 
 Mini Project
@@ -99,7 +100,13 @@ ffmpeg_out = 'ffmpeg -framerate 0.20 -i %d.jpg output.mp4 '
 ```
 Mysql.py
 ==========
-This allows you to connect to a existed database using the code below
+This allows you to connect to a existed database(mysql) using the code below
 ```bash
 db = pymysql.connect("localhost", "root", "your_password", "your_database_name")
+```
+Mongodb.py
+==========
+This allows you to connect to a existed database(mongodb) using the code below
+```bash
+client = pymongo.MongoClient("mongodb://localhost:27017/")
 ```
