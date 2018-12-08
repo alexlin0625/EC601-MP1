@@ -12,7 +12,7 @@ Table of contents
 <!--ts-->
    * [Mini-Project](#Mini-Project)
    * [Preparation](#Preparation)
-   * [Installation](#Installation)
+   * [Installation Package](#Installation-Package)
    * [Twitter.py](#Twitter.py) 
       * [get_all_tweets(screen_name)](#get-all-tweets(screen_name))
       * [labelPic(numa)](#downloadPic(numa))
